@@ -16,7 +16,8 @@ import {
     GLTFLoader
 } from 'three/examples/jsm/loaders/GLTFLoader.js';
 import {
-    scene
+    scene,
+    camera,
 } from './post.js'
 
 export default function diplodocus() {
@@ -31,7 +32,7 @@ export default function diplodocus() {
         model = gltf.scene;
 
         scene.add(model);
-        model.position.set(20, 0.1, -40);
+        model.position.set(20, 0.1, -20);
         model.rotation.y += -1.55;
         model.scale.set(0.6, 0.6, 0.6);
 
@@ -74,3 +75,48 @@ export default function diplodocus() {
     });
 
 };
+/*
+let raycaster = new THREE.Raycaster();
+let mouse = new THREE.Vector2();
+
+function onClick(event) {
+
+    event.preventDefault();
+
+    mouse.x = (event.offsetX / window.innerWidth) * 2 - 1;
+    mouse.y = -(event.offsetY / window.innerHeight) * 2 + 1;
+    console.log("X : ", mouse.x);
+    console.log("Y : ", mouse.y);
+
+    raycaster.setFromCamera(mouse, camera);
+
+    var intersects = raycaster.intersectObjects(scene.children);
+
+    const Perso = intersects.find(intersect => intersect.object.name.toLowerCase() === "Diplodocus");
+    console.dir(intersects);
+
+    if (Perso) {
+        jump = clips.filter(function (clip) {
+            return clip.name.includes("OnClick");
+        });
+
+        jump.forEach(function (clip) {
+            mixer.clipAction(clip).reset();
+            mixer.clipAction(clip).clampWhenFinished = true;
+            mixer.clipAction(clip).loop = THREE.LoopOnce;
+            return mixer.clipAction(clip).play();
+        });
+    } else {
+        console.error("no clickable object");
+    };
+
+    let start;
+
+    function step(timestamp) {
+        if (start === undefined) {
+            start = timestamp;
+        }
+    };
+    window.requestAnimationFrame(step);
+}
+window.addEventListener('click', onClick, false);*/

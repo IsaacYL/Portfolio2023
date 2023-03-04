@@ -20,9 +20,9 @@ export default function loaderPerso() {
         const model = gltf.scene;
 
         scene.add(model);
-        model.position.set(24.8, 0, -25);
+        model.position.set(24.8, 0, -13);
         model.rotation.y += -1.55;
-        model.scale.set(1, 1, 1);
+        model.scale.set(0.85, 0.85, 0.85);
 
         //Shadow on all objects----------------------------------------------------
         gltf.scene.traverse(function (node) {
@@ -63,50 +63,3 @@ export default function loaderPerso() {
         console.error(error);
     });
 };
-
-/*
-let raycaster = new THREE.Raycaster();
-let mouse = new THREE.Vector2();
-
-function onClick(event) {
-
-    event.preventDefault();
-
-    mouse.x = (event.offsetX / window.innerWidth) * 2 - 1;
-    mouse.y = -(event.offsetY / window.innerHeight) * 2 + 1;
-    console.log("X : ", mouse.x);
-    console.log("Y : ", mouse.y);
-
-    raycaster.setFromCamera(mouse, camera);
-
-    var intersects = raycaster.intersectObjects(scene.children);
-
-    const Perso = intersects.find(intersect => intersect.object.name === "Isaac");
-    console.dir(intersects);
-
-    if (Perso) {
-        console.log("gg")
-        hello = clips.filter(function (clip) {
-            return clip.name.includes("Hello");
-        });
-
-        hello.forEach(function (clip) {
-            mixer.clipAction(clip).reset();
-            mixer.clipAction(clip).clampWhenFinished = true;
-            mixer.clipAction(clip).loop = THREE.LoopOnce;
-            return mixer.clipAction(clip).play();
-        });
-    } else {
-        console.error("no clickable object");
-    };
-
-    let start;
-
-    function step(timestamp) {
-        if (start === undefined) {
-            start = timestamp;
-        }
-    };
-    window.requestAnimationFrame(step);
-}
-window.addEventListener('click', onClick, false);*/
