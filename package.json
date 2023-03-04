@@ -1,0 +1,26 @@
+{
+  "name": "Isaac_Lefebvre_Portofolio_2023",
+  "version": "1.0.0",
+  "description": "",
+  "main": "script.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "parcel index.html",
+    "build:parcel": "parcel build ./index.html --public-url ./ --no-source-maps",
+    "build": "npm run build:parcel"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "GNU-GPL v3",
+  "dependencies": {
+    "gsap": "^3.11.1",
+    "interactive": "^0.1.9",
+    "three": "^0.142.0",
+    "threex.domevents": "^1.0.1",
+    "update": "^0.7.4"
+  },
+  "devDependencies": {
+    "@parcel/reporter-dev-server": "^2.8.3",
+    "parcel": "^2.8.3"
+  }
+}

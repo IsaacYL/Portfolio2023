@@ -1,0 +1,95 @@
+/* MOBILE FIRST */
+h1, h2, h3, h4, h5, h6, p, li, ul{
+    margin: 0;
+    padding: 0;
+    z-index: 100;
+}
+
+*{
+    color: #17222B;
+}
+
+h1, h2, h3{
+    font-family: 'Righteous', cursive;
+    text-transform: uppercase;
+}
+
+p, li, ul, button{
+    font-family: 'Roboto', sans-serif;
+}
+
+h1{
+    font-size: 1.7rem;
+}
+
+h3{
+    font-size: 1.2rem;
+}
+
+h4{
+    font-family: 'Righteous', cursive;
+    font-size: 1rem;
+}
+
+p{
+    font-size: 0.7rem;
+}
+
+li, ul{
+    font-size: 0.6rem;
+}
+
+#X{
+    font-size: 1.3rem;
+}
+
+.blue {
+    color: rgb(34, 104, 179);
+}
+
+.yellow {
+    color: rgb(210, 183, 28);
+}
+
+.red {
+    color: rgb(202, 60, 60);
+}
+
+span {
+    font-weight: 800;
+}
+
+button{
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+.btn-little-font{
+    font-size: 0.6rem;
+}
+
+/* TABLET */
+@media (min-width: 650px) and (max-width: 1200px) {
+    li{
+        font-size: 0.7rem;
+    }
+
+    .btn-little-font{
+        font-size: 0.8rem;
+    }
+}
+
+/* DESKTOP */
+@media (min-width:1023px) {
+    li{
+        font-size: 0.9rem;
+    }
+
+    h3{
+        font-size: 1.5rem;
+    }
+
+    .btn-little-font{
+        font-size: 0.8rem;
+    }
+}
