@@ -34,34 +34,30 @@ export default function loaderPerso() {
         idleAnimation();
 
         function idleAnimation() {
-            const mixer = new THREE.AnimationMixer(model.children[0]);
+            const character = model.children[0];
             const clips = gltf.animations;
 
-            clips.forEach(function (clip) {
-                const action = mixer.clipAction(clip);
-                action.play(clip);
-            });
+            const idleClip = clips.find(clip => clip.name.includes("Idle"));
+            character.animations.push(idleClip);
 
-            /*let idle;
-            idle = clips.filter(function (clip) {
-                return clip.name.includes("Idle");
-            });
+            //console.log(character);
 
-            idle.forEach(function (clip) {
-                mixer.clipAction(clip).reset();
-                mixer.clipAction(clip).clampWhenFinished = true;
-                console.log(mixer.clipAction(clip).play());
-                return mixer.clipAction(clip).play();
-            });*/
+            const mixer = new THREE.AnimationMixer(character);
 
-            /*idle.forEach(function (clip) {
-                mixer.clipAction(clip).reset();
-                mixer.clipAction(clip).clampWhenFinished = true;
-                mixer.clipAction(clip).loop = THREE.LoopOnce;
-                return mixer.clipAction(clip).play();
-            });*/
-            window.requestAnimationFrame(idleAnimation);
+            const action = mixer.clipAction(idleClip)
+            action.play();
+
+            var clock = new THREE.Clock();
+
+            animate();
+
+            function animate() {
+                var dt = clock.getDelta();
+                mixer.update(dt);
+                requestAnimationFrame(animate);
+            }
         }
+
 
     }, undefined, function (error) {
         console.error(error);

@@ -31,7 +31,7 @@ export default function diplodocus() {
         model = gltf.scene;
 
         scene.add(model);
-        model.position.set(21, -1.8, -40);
+        model.position.set(20, 0.1, -40);
         model.rotation.y += -1.55;
         model.scale.set(0.6, 0.6, 0.6);
 
@@ -41,6 +41,33 @@ export default function diplodocus() {
                 node.castShadow = true;
             }
         });
+
+        idleAnimation();
+
+        function idleAnimation() {
+            const character = model;
+            const clips = gltf.animations;
+
+            //console.log(clips);
+            const idleClip = clips.find(clip => clip.name.includes("Idle"));
+            character.animations.push(idleClip);
+
+            const mixer = new THREE.AnimationMixer(character);
+
+            const action = mixer.clipAction(idleClip)
+            action.play();
+
+            var clock = new THREE.Clock();
+
+            animate();
+
+            function animate() {
+                var dt = clock.getDelta();
+                mixer.update(dt);
+                requestAnimationFrame(animate);
+            }
+        }
+
 
     }, undefined, function (error) {
         console.error(error);

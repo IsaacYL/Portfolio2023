@@ -92,11 +92,11 @@ export function post() {
 
     //Frustum Light
     light.shadow.camera.top = 8;
-    light.shadow.camera.right = 8;
+    light.shadow.camera.right = 100;
     light.shadow.camera.bottom = -8;
-    light.shadow.camera.left = -8;
-    light.shadow.camera.near = 10;
-    light.shadow.camera.far = 300;
+    light.shadow.camera.left = -100;
+    light.shadow.camera.near = 0;
+    light.shadow.camera.far = 100;
 
     //Shadow map resolution
     light.shadow.mapSize.width = 512
