@@ -232,9 +232,9 @@ ul {
 
 .plank {
     position: relative;
-    top: -1rem;
-    z-index: 1;
-    width: 8rem;
+    top: -1.7rem;
+    z-index: -1;
+    width: 5rem;
 }
 
 .border-image {
@@ -367,7 +367,6 @@ canvas {
         display: flex;
         align-items: center;
         width: auto;
-        font-size: 0.8rem;
         padding: 1rem 2rem 1rem 2rem;
     }
 
@@ -495,10 +494,6 @@ canvas {
 
 /* ------------------- DESKTOP ------------------- */
 @media (min-width: 1000px) {
-    .btn {
-        font-size: 1rem;
-    }
-
     .top-page {
         margin-top: 12rem;
     }
@@ -546,5 +541,10 @@ canvas {
     .footer-index{
         position: absolute;
         bottom: 0;
+    }
+
+    .plank{
+        width: 8rem;
+        top: -2.5rem;
     }
 }
