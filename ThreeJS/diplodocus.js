@@ -29,7 +29,7 @@ export default function diplodocus() {
 
     //*-----------------------------------------------Importation du model-----------------------------------------*/
     assetLoader.load(THREEURL.href, function (gltf) {
-        model = gltf.scene;
+        const model = gltf.scene;
 
         scene.add(model);
         model.position.set(20, 0.1, -20);
