@@ -66,8 +66,8 @@ header .reversecolumn{
     display: flex;
     justify-content: center;
 
-    width: 8rem;
-    padding: 0.6rem 1.2rem 0.6rem 1.2rem;
+    width: 6rem;
+    padding: 0.4rem 0.4rem 0.4rem 0.4rem;
 
     border-radius: 5rem;
     border-width: 0.2rem;
@@ -291,6 +291,10 @@ canvas {
     height: 2rem;
     width: 2rem;
 }
+.space-threerem {
+    height: 3rem;
+    width: 3rem;
+}
 
 .space-fiverem {
     height: 5rem;
@@ -386,7 +390,7 @@ canvas {
         display: flex;
         align-items: center;
         width: auto;
-        padding: 0.6rem 2rem 0.6rem 2rem;
+        padding: 0.7rem 1.6rem 0.7rem 1.6rem;
     }
 
     .btn-little{
@@ -477,7 +481,7 @@ canvas {
 }
 
 /* ------------------- TABLET ------------------- */
-@media (min-width: 650px) and (max-width: 1000px) {
+@media (min-width: 650px) and (max-width: 1024px) {
     .top-page {
         margin-top: 10rem;
     }
@@ -516,7 +520,7 @@ canvas {
 
 
 /* ------------------- DESKTOP ------------------- */
-@media (min-width: 1000px) {
+@media (min-width: 1024px) {
     .top-page {
         margin-top: 12rem;
     }

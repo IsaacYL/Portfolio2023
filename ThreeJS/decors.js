@@ -78,7 +78,7 @@ export default function decors() {
 
                 function animate() {
                     var dt = clock.getDelta();
-                    mixer.update(dt*0.5);
+                    mixer.update(dt*0.1);
                     requestAnimationFrame(animate);
                 }
             }
