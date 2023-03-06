@@ -62,6 +62,14 @@ header .reversecolumn{
     width: 7rem;
 }
 
+.menu-burger{
+    display: block;
+    height: 0.2rem;
+    width: 100%;
+    background-color: #17222B;
+    transform-origin: center;
+}
+
 .btn{
     display: flex;
     justify-content: center;
@@ -73,6 +81,7 @@ header .reversecolumn{
     border-width: 0.2rem;
     border-style: solid;
     
+    align-items: center;
 }
 
 .btn-base{
@@ -102,6 +111,7 @@ header .reversecolumn{
 
     display: flex;
     flex-direction: column;
+    justify-content: space-around;
 }
 
 a {
@@ -380,6 +390,10 @@ canvas {
     height: 4rem;
 }
 
+.btn-phone{
+    width: 9rem;
+}
+
 /* ------------------- TABLET - DESKTOP ------------------- */
 @media (min-width: 650px) {
     #Menu {
@@ -478,6 +492,12 @@ canvas {
     .width-all-only-phone{
         
     }
+
+    
+.btn-phone{
+    width: 14rem;
+}
+
 }
 
 /* ------------------- TABLET ------------------- */
@@ -572,6 +592,6 @@ canvas {
 
     .plank{
         width: 8rem;
-        top: -2.5rem;
+        top: -2rem;
     }
 }

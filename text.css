@@ -22,7 +22,8 @@ h2,
 h3,
 h4,
 h5,
-button {
+button,
+.language {
     font-family: 'Dongle', sans-serif;
     line-height: 100%;
 }
@@ -57,7 +58,7 @@ h5{
 }
 
 p {
-    font-size: 0.8rem;
+    font-size: 1rem;
 }
 
 li,
@@ -92,6 +93,11 @@ button {
 
 .btn-little-font {
     font-size: 0.8rem;
+}
+
+.language{
+    font-size: 1.5rem;
+    font-weight: 700;
 }
 
 /* TABLET */
@@ -132,7 +138,12 @@ button {
     }
 
     button {
-        font-size: 1.5rem;
+        font-size: 1.8rem;
+        font-weight: 700;
+    }
+
+    .language{
+        font-size: 2rem;
         font-weight: 700;
     }
 
