@@ -2,11 +2,10 @@
   "name": "Isaac_Lefebvre_Portofolio_2023",
   "version": "1.0.0",
   "description": "",
-  "main": "script.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "parcel index.html",
-    "build:parcel": "parcel build ./index.html --public-url ./ --no-source-maps",
+    "build:parcel": "parcel build ./index.html --public-url ./ --no-source-maps --dist-dir ./docs",
     "build": "npm run build:parcel"
   },
   "keywords": [],
