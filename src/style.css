@@ -74,6 +74,14 @@ header .reversecolumn {
     transform-origin: center;
 }
 
+.menu-burger-white {
+    display: block;
+    height: 0.2rem;
+    width: 100%;
+    background-color: #EDE1D6;
+    transform-origin: center;
+}
+
 .btn {
     display: flex;
     justify-content: center;
@@ -391,6 +399,11 @@ canvas {
     flex-direction: column-reverse;
 }
 
+.only-phone-column{
+    display: flex;
+    flex-direction: column;
+}
+
 .profile-photo {
     width: 4rem;
     height: 4rem;
@@ -483,6 +496,11 @@ canvas {
     }
 
     .only-phone-reversecolumn {
+        display: flex;
+        flex-direction: row;
+    }
+
+    .only-phone-column{
         display: flex;
         flex-direction: row;
     }

@@ -73,7 +73,7 @@ export default function loaderPerso() {
         
             var intersects = raycaster.intersectObjects(scene.children);
         
-            const Perso = intersects.find(intersect => intersect.object.name === "Mountain_01");
+            const Perso = intersects.find(intersect => intersect.object.name === "Isaac");
             console.dir(intersects);
         
             if(Perso){
