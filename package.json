@@ -4,8 +4,8 @@
   "description": "",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "parcel index.html",
-    "build:parcel": "parcel build ./index.html --public-url ./ --no-source-maps --dist-dir ./docs",
+    "start": "parcel ./src/index.html",
+    "build:parcel": "parcel build ./src/index.html --public-url ./ --no-source-maps --dist-dir ./docs",
     "build": "npm run build:parcel"
   },
   "keywords": [],

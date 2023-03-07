@@ -1,0 +1,600 @@
+html::-webkit-scrollbar {
+    display: none;
+}
+
+html {
+    -ms-overflow-style: none;
+    /* IE and Edge */
+    scrollbar-width: none;
+    /* Firefox */
+}
+
+::selection {
+    background: #86373E;
+    color: #F8F8F0;
+}
+
+html,
+body {
+    margin: 0;
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.body-index {
+    height: 100vh;
+}
+
+.plan-one {
+    z-index: 1;
+}
+
+.plan-two {
+    z-index: 100;
+}
+
+.plan-three {
+    z-index: 10000;
+}
+
+.margin {
+    width: 70vw;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+
+    margin-top: 3rem;
+    position: absolute;
+    top: 0;
+}
+
+header .reversecolumn {
+    justify-content: center;
+}
+
+#Logo,
+.logo {
+    width: 7rem;
+}
+
+.menu-burger {
+    display: block;
+    height: 0.2rem;
+    width: 100%;
+    background-color: #17222B;
+    transform-origin: center;
+}
+
+.btn {
+    display: flex;
+    justify-content: center;
+
+    width: 6rem;
+    padding: 0.4rem 0.4rem 0.4rem 0.4rem;
+
+    border-radius: 5rem;
+    border-width: 0.2rem;
+    border-style: solid;
+
+    align-items: center;
+}
+
+.btn-base {
+    border-color: #17222B;
+    background-color: rgba(255, 255, 255, 0);
+    color: #17222B;
+}
+
+.btn-fill {
+    color: #17222B;
+    background-color: #EFD9C7;
+    border-color: #17222B;
+}
+
+.btn-little {
+    width: auto;
+    margin: 0;
+    padding: 0.4rem 1.5rem 0.4rem 1.5rem;
+}
+
+#CmdMenu {
+    padding: 0.5rem;
+    width: auto;
+    height: 0.8rem;
+
+    position: relative;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+a {
+    text-decoration: none;
+}
+
+.btn-base:hover {
+    color: #F8F8F0;
+    background-color: #17222B;
+    cursor: pointer;
+}
+
+.btn-fill:hover {
+    color: #F8F8F0;
+    background-color: #17222B;
+    border-color: #17222B;
+}
+
+.icon {
+    width: 1.7rem;
+}
+
+footer {
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+    display: flex;
+    justify-content: space-between;
+}
+
+.flex-end {
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+}
+
+.column {
+    display: flex;
+    flex-direction: column;
+}
+
+.reversecolumn {
+    display: flex;
+    flex-direction: column-reverse;
+}
+
+.center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.horizontal-center {
+    display: flex;
+    justify-content: center;
+}
+
+.case {
+    background-color: #F8F8F0;
+    padding: 2rem;
+    justify-content: space-between;
+    height: 45vh;
+    text-decoration: none;
+
+    border-radius: 2rem;
+
+    -webkit-box-shadow: -1px 9px 18px 0px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: -1px 9px 18px 0px rgba(0, 0, 0, 0.75);
+    box-shadow: -1px 9px 18px 0px rgba(0, 0, 0, 0.75);
+}
+
+.case:hover {
+    filter: none;
+}
+
+.case>div {
+    display: flex;
+    justify-content: space-between;
+    color: #17222B;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 700;
+}
+
+.tag {
+    background-color: #86373E;
+    color: #F8F8F0;
+    padding: 0.5rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    border-radius: 5rem;
+}
+
+li,
+ul {
+    list-style: none;
+}
+
+.case-one {
+    background-image: url("./Assets/Projets/Tetes_Creux/Poster_03.png");
+    background-repeat: no-repeat;
+    object-fit: cover;
+    background-position: center;
+    color: white;
+}
+
+.case-two {
+    background-image: url("./Assets/Projets/Saiko/Icon.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    color: rgb(255, 255, 255);
+}
+
+.case-three {
+    background-image: url("./Assets/Projets/Kaiso/Logo_Black.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    color: white;
+}
+
+.case-four {
+    background-image: url("./Assets/Projets/3D_Real_Time/Diplodocus.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: bottom;
+    color: white;
+}
+
+.case-five {
+    background-image: url("./Assets/Projets/Website/Miniature.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    color: white;
+}
+
+.case-six {
+    background-image: url("./Assets/Projets/Pfizer/Miniature.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    color: white;
+}
+
+.plank {
+    position: relative;
+    top: -1.7rem;
+    z-index: -1;
+    width: 5rem;
+}
+
+.border-image {
+    border-radius: 2rem;
+}
+
+.wrap {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.reversewrap {
+    display: flex;
+    flex-wrap: wrap-reverse;
+}
+
+canvas {
+    height: 50vh;
+    width: 100%;
+}
+
+#Menu {
+    flex-direction: column;
+    align-items: center;
+    display: none;
+}
+
+.side {
+    margin-top: 1rem;
+}
+
+.space-onerem {
+    height: 1rem;
+    width: 1rem;
+}
+
+.space-tworem {
+    height: 2rem;
+    width: 2rem;
+}
+
+.space-threerem {
+    height: 3rem;
+    width: 3rem;
+}
+
+.space-fiverem {
+    height: 5rem;
+    width: 5rem;
+}
+
+.top-page {
+    margin-top: 8rem;
+}
+
+.top-page-index {
+    margin-top: 12rem;
+}
+
+.Tetes_Creux_Gameplay {
+    height: 50vh;
+}
+
+.img-actions {
+    width: 70%;
+    object-fit: contain;
+}
+
+.footer-index {
+    position: absolute;
+    bottom: 0;
+}
+
+/* ------------------- MOBILE FIRST ------------------- */
+.width-all-only-phone {
+    width: 100%;
+}
+
+.wrap-only-phone {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.reversewrap-only-phone {
+    display: flex;
+    flex-wrap: wrap-reverse;
+}
+
+.display-only-desktop {
+    display: none;
+}
+
+.display-only-tablet {
+    display: none;
+}
+
+.display-only-desktop-tablet {
+    display: none;
+}
+
+.large-on-phone {
+    width: 50%;
+}
+
+.wrapper {
+    display: grid;
+    width: 90vw;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 2rem 3rem;
+}
+
+.background-project {
+    height: 60vh;
+    width: 100vw;
+    object-fit: cover;
+}
+
+.double-image {
+    width: 50%;
+}
+
+.only-phone-reversecolumn {
+    display: flex;
+    flex-direction: column-reverse;
+}
+
+.profile-photo {
+    width: 4rem;
+    height: 4rem;
+}
+
+.btn-phone {
+    width: 10rem;
+}
+
+/* ------------------- TABLET - DESKTOP ------------------- */
+@media (min-width: 650px) {
+    #Menu {
+        flex-direction: row;
+    }
+
+    .btn {
+        display: flex;
+        align-items: center;
+        width: auto;
+        padding: 0.7rem 1.6rem 0.7rem 1.6rem;
+    }
+
+    .btn-little {
+        padding: 0.4rem 1.5rem 0.4rem 1.5rem;
+    }
+
+    #CmdMenu {
+        display: none;
+    }
+
+    .side {
+        margin-top: 0;
+        margin-left: 2rem;
+    }
+
+    .width-half {
+        width: 50%;
+    }
+
+    .width-sixty {
+        width: 60%;
+    }
+
+    .width-forty {
+        width: 40%;
+    }
+
+    .width-twenty-six {
+        width: 26%;
+    }
+
+    .width-twenty {
+        width: 20%;
+    }
+
+    .width-thirty-six {
+        width: 36%;
+    }
+
+    .width-forty-five {
+        width: 45%;
+    }
+
+    .width-seventy {
+        width: 70%;
+    }
+
+    .width-thirty {
+        width: 30%;
+    }
+
+    .display-only-phone {
+        display: none;
+    }
+
+    .display-only-desktop-tablet {
+        display: flex;
+    }
+
+    .wrapper {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    #Menu {
+        display: flex;
+    }
+
+    .double-image {
+        width: 30%;
+    }
+
+    .only-phone-reversecolumn {
+        display: flex;
+        flex-direction: row;
+    }
+
+    .Tetes_Creux_Gameplay {
+        height: 80vh;
+    }
+
+    .width-all-only-phone {}
+
+
+    .btn-phone {
+        width: 15rem;
+    }
+
+}
+
+/* ------------------- TABLET ------------------- */
+@media (min-width: 650px) and (max-width: 1024px) {
+    .top-page {
+        margin-top: 10rem;
+    }
+
+    .top-page-index {
+        margin-top: 12rem;
+    }
+
+    #Logo,
+    .logo {
+        width: 10rem;
+    }
+
+    .margin {
+        width: 80vw;
+    }
+
+    .case {
+        height: 30vh;
+        filter: grayscale(90%);
+    }
+
+    .background-project {
+        height: 70vh;
+        width: 100vw;
+    }
+
+    .display-only-tablet {
+        display: flex;
+    }
+
+    footer {
+        margin-top: 2rem;
+    }
+
+    .large-on-phone {
+        width: 40%;
+    }
+}
+
+
+/* ------------------- DESKTOP ------------------- */
+@media (min-width: 1024px) {
+    .top-page {
+        margin-top: 12rem;
+    }
+
+    .top-page-index {
+        margin-top: 12rem;
+    }
+
+    #Logo,
+    .logo {
+        width: 10rem;
+    }
+
+    .case {
+        height: 60vh;
+        filter: grayscale(90%);
+    }
+
+    .wrapper {
+        width: 80vw;
+    }
+
+    .background-project {
+        height: auto;
+        width: 100vw;
+        object-fit: contain;
+    }
+
+    .wrap-only-phone {
+        flex-wrap: nowrap;
+    }
+
+    .reversewrap-only-phone {
+        flex-wrap: nowrap;
+    }
+
+    .display-only-desktop {
+        display: flex;
+    }
+
+    .display-only-tablet {
+        display: none;
+    }
+
+    .plank {
+        width: 8rem;
+        top: -2rem;
+    }
+
+    .large-on-phone {
+        width: 30%;
+    }
+}
