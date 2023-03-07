@@ -47,7 +47,10 @@ export default function loaderPerso() {
 
             const mixer = new THREE.AnimationMixer(character);
 
-            const action = mixer.clipAction(idleClip)
+            const action = mixer.clipAction(idleClip);
+
+            mixer.clipAction(idleClip).reset();
+            mixer.clipAction(idleClip).clampWhenFinished = true;
             action.play();
 
             var clock = new THREE.Clock();
@@ -60,55 +63,61 @@ export default function loaderPerso() {
                 requestAnimationFrame(animate);
             }
         }
-/*
-        function onClick(event){
+        /*
+        function onClick(event) {
             event.preventDefault();
-        
+            
             mouse.x = (event.offsetX / window.innerWidth) * 2 - 1;
             mouse.y = -(event.offsetY / window.innerHeight) * 2 + 1;
             console.log("X : ", mouse.x);
             console.log("Y : ", mouse.y);
-        
+            
             raycaster.setFromCamera(mouse, camera);
-        
-            var intersects = raycaster.intersectObjects(scene.children);
-        
-            const Perso = intersects.find(intersect => intersect.object.name === "Isaac");
+            
+            var intersects = raycaster.intersectObjects(scene.children[5].children);
+            console.log(scene.children[5].children[0]);
+            
+            const Perso = intersects.find(intersect => intersect.object.name.toLowerCase() === "Scene");
             console.dir(intersects);
-        
-            if(Perso){
-                helloAnimation();
-        
-                function helloAnimation() {
-                    const character = model.children[0];
-                    const clips = gltf.animations;
-        
-                    const helloClip = clips.find(clip => clip.name.includes("Hello"));
-                    character.animations.push(helloClip);
-        
-                    //console.log(character);
-        
-                    const mixer = new THREE.AnimationMixer(character);
-        
-                    const action = mixer.clipAction(helloClip)
-                    action.play();
-        
-                    var clock = new THREE.Clock();
-        
-                    animate();
-        
-                    function animate() {
-                        var dt = clock.getDelta();
-                        mixer.update(dt);
-                        requestAnimationFrame(animate);
-                    }
+
+            if (Perso) {
+            helloAnimation();
+
+            function helloAnimation() {
+                const character = model.children[0];
+                const clips = gltf.animations;
+
+                const helloClip = clips.find(clip => clip.name.includes("Hello"));
+                character.animations.push(helloClip);
+
+                //console.log(character);
+
+                const mixer = new THREE.AnimationMixer(character);
+                mixer.clipAction(helloClip).loop = THREE.LoopOnce;
+
+                const action = mixer.clipAction(helloClip);
+
+                mixer.clipAction(helloClip).reset();
+                mixer.clipAction(helloClip).clampWhenFinished = true;
+                action.play();
+
+                var clock = new THREE.Clock();
+
+                animate();
+
+                function animate() {
+                    var dt = clock.getDelta();
+                    mixer.update(dt);
+                    requestAnimationFrame(animate);
                 }
+            }
+
             } else {
                 console.error("no clickable object");
             };
         }
-        window.addEventListener('click', onClick, false);
-*/
+        window.addEventListener('click', onClick, false);*/
+
 
     }, undefined, function (error) {
         console.error(error);
