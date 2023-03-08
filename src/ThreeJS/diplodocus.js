@@ -52,7 +52,7 @@ export default function diplodocus() {
             const character = model;
             const clips = gltf.animations;
 
-            console.log(character);
+            //console.log(character);
             const idleClip = clips.find(clip => clip.name.includes("Idle"));
             character.animations.push(idleClip);
 
@@ -71,7 +71,7 @@ export default function diplodocus() {
                 requestAnimationFrame(animate);
             }
         }
-        /*
+        
         function onClick(event) {
             event.preventDefault();
             
@@ -124,7 +124,7 @@ export default function diplodocus() {
                 console.error("no clickable object");
             };
         }
-        window.addEventListener('click', onClick, false);*/
+        window.addEventListener('click', onClick, {passive: true});
 
     }, undefined, function (error) {
         console.error(error);

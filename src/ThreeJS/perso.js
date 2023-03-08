@@ -63,7 +63,7 @@ export default function loaderPerso() {
                 requestAnimationFrame(animate);
             }
         }
-        /*
+        
         function onClick(event) {
             event.preventDefault();
             
@@ -74,59 +74,58 @@ export default function loaderPerso() {
             
             raycaster.setFromCamera(mouse, camera);
 
-            var PersoAssets = [];
+            var persoAssets = [];
             for(i = 0; i < scene.children[5].children[0].children.length; i++){
-                PersoAssets.push(scene.children[5].children[0].children[i]);
+                persoAssets.push(scene.children[5].children[0].children[i]);
             }
-            console.log(PersoAssets);
+            console.log(persoAssets);
             
             //var intersects = raycaster.intersectObjects(scene.children[5].children[0], true);
-            var intersects = raycaster.intersectObjects(scene.children, true);
+            var intersects = raycaster.intersectObjects(scene.children);
 
-            //const Perso = intersects.find(intersect => intersect.object.name.toLowerCase() === "hair_skull");
-            //const FoundPerso = intersects.some(intersect => PersoAssets.includes(intersect));
-            const FoundPerso = PersoAssets.includes(intersects[0]);
+            //const perso = intersects.find(intersect => intersect.object.name.toLowerCase() === "hair_skull");
+            const hasPerso = intersects.some(intersect => persoAssets.includes(intersect.object));
+            //const hasPerso = persoAssets.includes(intersects[0]);
 
-            console.dir(intersects[0]);
-            console.dir(FoundPerso);
+            console.dir(intersects);
+            console.dir(hasPerso);
             
-            if (FoundPerso) {
-            helloAnimation();
-            
-            function helloAnimation() {
-                const character = model.children[0];
-                const clips = gltf.animations;
+            if (hasPerso) {
+                helloAnimation();
                 
-                const helloClip = clips.find(clip => clip.name.includes("Hello"));
-                character.animations.push(helloClip);
-                
-                //console.log(character);
+                function helloAnimation() {
+                    const character = model.children[0];
+                    const clips = gltf.animations;
+                    
+                    const helloClip = clips.find(clip => clip.name.includes("Hello"));
+                    character.animations.push(helloClip);
+                    
+                    //console.log(character);
 
-                const mixer = new THREE.AnimationMixer(character);
-                mixer.clipAction(helloClip).loop = THREE.LoopOnce;
+                    const mixer = new THREE.AnimationMixer(character);
+                    mixer.clipAction(helloClip).loop = THREE.LoopOnce;
 
-                const action = mixer.clipAction(helloClip);
+                    const action = mixer.clipAction(helloClip);
 
-                mixer.clipAction(helloClip).reset();
-                mixer.clipAction(helloClip).clampWhenFinished = true;
-                action.play();
+                    mixer.clipAction(helloClip).reset();
+                    mixer.clipAction(helloClip).clampWhenFinished = true;
+                    action.play();
 
-                var clock = new THREE.Clock();
-                
-                animate();
-                
-                function animate() {
-                    var dt = clock.getDelta();
-                    mixer.update(dt*2);
-                    requestAnimationFrame(animate);
+                    var clock = new THREE.Clock();
+                    
+                    animate();
+                    
+                    function animate() {
+                        var dt = clock.getDelta();
+                        mixer.update(dt*2);
+                        requestAnimationFrame(animate);
+                    }
                 }
-            }
-            
             } else {
                 console.error("no clickable object");
             };
         }
-        window.addEventListener('click', onClick, false);*/
+        window.addEventListener('click', onClick, {passive: true});
 
 
     }, undefined, function (error) {
