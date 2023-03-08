@@ -89,36 +89,36 @@ export default function diplodocus() {
             console.dir(intersects[0]);
             
             if (Perso) {
-            jumpAnimation();
-            
-            function jumpAnimation() {
-                const character = model.children[0];
-                const clips = gltf.animations;
+                jumpAnimation();
                 
-                const helloClip = clips.find(clip => clip.name.includes("OnClick"));
-                character.animations.push(helloClip);
-                
-                //console.log(character);
+                function jumpAnimation() {
+                    const character = model.children[0];
+                    const clips = gltf.animations;
+                    
+                    const helloClip = clips.find(clip => clip.name.includes("OnClick"));
+                    character.animations.push(helloClip);
+                    
+                    //console.log(character);
 
-                const mixer = new THREE.AnimationMixer(character);
-                mixer.clipAction(helloClip).loop = THREE.LoopOnce;
+                    const mixer = new THREE.AnimationMixer(character);
+                    mixer.clipAction(helloClip).loop = THREE.LoopOnce;
 
-                const action = mixer.clipAction(helloClip);
+                    const action = mixer.clipAction(helloClip);
 
-                mixer.clipAction(helloClip).reset();
-                mixer.clipAction(helloClip).clampWhenFinished = true;
-                action.play();
+                    mixer.clipAction(helloClip).reset();
+                    mixer.clipAction(helloClip).clampWhenFinished = true;
+                    action.play();
 
-                var clock = new THREE.Clock();
-                
-                animate();
-                
-                function animate() {
-                    var dt = clock.getDelta();
-                    mixer.update(dt*2);
-                    requestAnimationFrame(animate);
+                    var clock = new THREE.Clock();
+                    
+                    animate();
+                    
+                    function animate() {
+                        var dt = clock.getDelta();
+                        mixer.update(dt*2);
+                        requestAnimationFrame(animate);
+                    }
                 }
-            }
             
             } else {
                 console.error("no clickable object");
