@@ -67,29 +67,39 @@ export default function loaderPerso() {
         function onClick(event) {
             event.preventDefault();
             
-            mouse.x = (event.offsetX / window.innerWidth) * 2 - 1;
-            mouse.y = -(event.offsetY / window.innerHeight) * 2 + 1;
+            mouse.x = (event.clientX / window.innerWidth) * 2 - 1;
+            mouse.y = -(event.clientY / window.innerHeight) * 2 + 1;
             console.log("X : ", mouse.x);
             console.log("Y : ", mouse.y);
             
             raycaster.setFromCamera(mouse, camera);
-            
-            var intersects = raycaster.intersectObjects(scene.children[5].children);
-            console.log(scene.children[5].children[0]);
-            
-            const Perso = intersects.find(intersect => intersect.object.name.toLowerCase() === "Scene");
-            console.dir(intersects);
 
-            if (Perso) {
+            var PersoAssets = [];
+            for(i = 0; i < scene.children[5].children[0].children.length; i++){
+                PersoAssets.push(scene.children[5].children[0].children[i]);
+            }
+            console.log(PersoAssets);
+            
+            //var intersects = raycaster.intersectObjects(scene.children[5].children[0], true);
+            var intersects = raycaster.intersectObjects(scene.children, true);
+
+            //const Perso = intersects.find(intersect => intersect.object.name.toLowerCase() === "hair_skull");
+            //const FoundPerso = intersects.some(intersect => PersoAssets.includes(intersect));
+            const FoundPerso = PersoAssets.includes(intersects[0]);
+
+            console.dir(intersects[0]);
+            console.dir(FoundPerso);
+            
+            if (FoundPerso) {
             helloAnimation();
-
+            
             function helloAnimation() {
                 const character = model.children[0];
                 const clips = gltf.animations;
-
+                
                 const helloClip = clips.find(clip => clip.name.includes("Hello"));
                 character.animations.push(helloClip);
-
+                
                 //console.log(character);
 
                 const mixer = new THREE.AnimationMixer(character);
@@ -102,16 +112,16 @@ export default function loaderPerso() {
                 action.play();
 
                 var clock = new THREE.Clock();
-
+                
                 animate();
-
+                
                 function animate() {
                     var dt = clock.getDelta();
-                    mixer.update(dt);
+                    mixer.update(dt*2);
                     requestAnimationFrame(animate);
                 }
             }
-
+            
             } else {
                 console.error("no clickable object");
             };
