@@ -20,6 +20,9 @@ import {
     camera,
 } from './post.js'
 
+let mouse = new THREE.Vector2();
+let raycaster = new THREE.Raycaster();
+
 export default function diplodocus() {
     const assetLoader = new GLTFLoader();
 
@@ -49,7 +52,7 @@ export default function diplodocus() {
             const character = model;
             const clips = gltf.animations;
 
-            //console.log(clips);
+            console.log(character);
             const idleClip = clips.find(clip => clip.name.includes("Idle"));
             character.animations.push(idleClip);
 
@@ -68,7 +71,60 @@ export default function diplodocus() {
                 requestAnimationFrame(animate);
             }
         }
+        /*
+        function onClick(event) {
+            event.preventDefault();
+            
+            mouse.x = (event.clientX / window.innerWidth) * 2 - 1;
+            mouse.y = -(event.clientY / window.innerHeight) * 2 + 1;
+            console.log("X : ", mouse.x);
+            console.log("Y : ", mouse.y);
+            
+            raycaster.setFromCamera(mouse, camera);
+            
+            var intersects = raycaster.intersectObjects(scene.children, true);
 
+            const Perso = intersects.find(intersect => intersect.object.name.toLowerCase() === "diplodocus");
+
+            console.dir(intersects[0]);
+            
+            if (Perso) {
+            jumpAnimation();
+            
+            function jumpAnimation() {
+                const character = model.children[0];
+                const clips = gltf.animations;
+                
+                const helloClip = clips.find(clip => clip.name.includes("OnClick"));
+                character.animations.push(helloClip);
+                
+                //console.log(character);
+
+                const mixer = new THREE.AnimationMixer(character);
+                mixer.clipAction(helloClip).loop = THREE.LoopOnce;
+
+                const action = mixer.clipAction(helloClip);
+
+                mixer.clipAction(helloClip).reset();
+                mixer.clipAction(helloClip).clampWhenFinished = true;
+                action.play();
+
+                var clock = new THREE.Clock();
+                
+                animate();
+                
+                function animate() {
+                    var dt = clock.getDelta();
+                    mixer.update(dt*2);
+                    requestAnimationFrame(animate);
+                }
+            }
+            
+            } else {
+                console.error("no clickable object");
+            };
+        }
+        window.addEventListener('click', onClick, false);*/
 
     }, undefined, function (error) {
         console.error(error);
