@@ -189,9 +189,9 @@ footer {
 
     border-radius: 2rem;
 
-    -webkit-box-shadow: -1px 9px 18px 0px rgba(0, 0, 0, 0.75);
-    -moz-box-shadow: -1px 9px 18px 0px rgba(0, 0, 0, 0.75);
-    box-shadow: -1px 9px 18px 0px rgba(0, 0, 0, 0.75);
+    -webkit-box-shadow: -1px 9px 18px 0px rgba(79, 56, 29, 0.5);
+    -moz-box-shadow: -1px 9px 18px 0px rgba(79, 56, 29, 0.5);
+    box-shadow: -1px 9px 18px 0px rgba(79, 56, 29, 0.5);
 }
 
 .case:hover {
@@ -346,6 +346,21 @@ canvas {
     bottom: 0;
 }
 
+.photo-me{
+    background-image: url("./Assets/About_me/La_Spezia.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: left;
+    min-height: 20rem;
+}
+
+.photo-me:hover{
+    background-image: url("./Assets/About_me/La_Spezia_Smile.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: left;
+}
+
 /* ------------------- MOBILE FIRST ------------------- */
 .width-all-only-phone {
     width: 100%;
@@ -413,6 +428,10 @@ canvas {
     width: 10rem;
 }
 
+.width-half-photo-me {
+    width: 100%;
+}
+
 /* ------------------- TABLET - DESKTOP ------------------- */
 @media (min-width: 650px) {
     #Menu {
@@ -440,6 +459,10 @@ canvas {
     }
 
     .width-half {
+        width: 50%;
+    }
+
+    .width-half-photo-me {
         width: 50%;
     }
 
