@@ -59,6 +59,7 @@ h5{
 
 p {
     font-size: 0.8rem;
+    line-height: 140%;
 }
 
 li,
@@ -98,6 +99,19 @@ button {
 .language{
     font-size: 1.5rem;
     font-weight: 700;
+}
+
+footer p{
+    text-decoration: underline;
+}
+
+/* LITTLE PHONE*/
+@media (max-width: 400px){
+    p{
+        line-height: 120%;
+    }
+
+    
 }
 
 /* TABLET */
@@ -153,5 +167,11 @@ button {
 
     p {
         font-size: 1rem;
+    }
+
+    footer p {
+        font-size: 0.7rem;
+        font-weight: 900;
+        text-transform: none;
     }
 }
