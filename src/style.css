@@ -551,6 +551,10 @@ canvas {
         width: 70%;
     }
 
+    .width-eighty {
+        width: 80%;
+    }
+
     .width-thirty {
         width: 30%;
     }

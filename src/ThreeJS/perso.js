@@ -65,12 +65,12 @@ export default function loaderPerso() {
         }
         
         function onClick(event) {
-            event.preventDefault();
+            //event.preventDefault();
             
             mouse.x = (event.clientX / window.innerWidth) * 2 - 1;
             mouse.y = -(event.clientY / window.innerHeight) * 2 + 1;
-            console.log("X : ", mouse.x);
-            console.log("Y : ", mouse.y);
+            //console.log("X : ", mouse.x);
+            //console.log("Y : ", mouse.y);
             
             raycaster.setFromCamera(mouse, camera);
 
@@ -78,15 +78,18 @@ export default function loaderPerso() {
             for(i = 0; i < scene.children[5].children[0].children.length; i++){
                 persoAssets.push(scene.children[5].children[0].children[i]);
             }
+            
+            console.log("Perso Assets : ");
             console.log(persoAssets);
             
-            //var intersects = raycaster.intersectObjects(scene.children[5].children[0], true);
+            //var intersects = raycaster.intersectObjects(scene.children[5].children[0]);
             var intersects = raycaster.intersectObjects(scene.children);
 
-            //const perso = intersects.find(intersect => intersect.object.name.toLowerCase() === "hair_skull");
+            //const perso = intersects.find(intersect => intersect.object.name.toLowerCase() === "isaac");
             const hasPerso = intersects.some(intersect => persoAssets.includes(intersect.object));
             //const hasPerso = persoAssets.includes(intersects[0]);
 
+            console.log("Intersection : ");
             console.dir(intersects);
             console.dir(hasPerso);
             

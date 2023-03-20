@@ -73,12 +73,12 @@ export default function diplodocus() {
         }
         
         function onClick(event) {
-            event.preventDefault();
+            //event.preventDefault();
             
             mouse.x = (event.clientX / window.innerWidth) * 2 - 1;
             mouse.y = -(event.clientY / window.innerHeight) * 2 + 1;
-            console.log("X : ", mouse.x);
-            console.log("Y : ", mouse.y);
+            //console.log("X : ", mouse.x);
+            //console.log("Y : ", mouse.y);
             
             raycaster.setFromCamera(mouse, camera);
             
@@ -86,7 +86,7 @@ export default function diplodocus() {
 
             const Perso = intersects.find(intersect => intersect.object.name.toLowerCase() === "diplodocus");
 
-            console.dir(intersects[0]);
+            //console.dir(intersects);
             
             if (Perso) {
                 jumpAnimation();
