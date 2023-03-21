@@ -83,12 +83,13 @@ export default function diplodocus() {
             raycaster.setFromCamera(mouse, camera);
             
             var intersects = raycaster.intersectObjects(scene.children, true);
+            //console.log(scene.children);
 
-            const Perso = intersects.find(intersect => intersect.object.name.toLowerCase() === "diplodocus");
+            const hasDiplodocus = intersects.find(intersect => intersect.object.name.toLowerCase() === "diplodocus");
 
             //console.dir(intersects);
-            
-            if (Perso) {
+
+            if (hasDiplodocus) {
                 jumpAnimation();
                 
                 function jumpAnimation() {

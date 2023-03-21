@@ -79,8 +79,8 @@ export default function loaderPerso() {
                 persoAssets.push(scene.children[5].children[0].children[i]);
             }
             
-            console.log("Perso Assets : ");
-            console.log(persoAssets);
+            //console.log("Perso Assets : ");
+            //console.log(persoAssets);
             
             //var intersects = raycaster.intersectObjects(scene.children[5].children[0]);
             var intersects = raycaster.intersectObjects(scene.children);
@@ -89,9 +89,9 @@ export default function loaderPerso() {
             const hasPerso = intersects.some(intersect => persoAssets.includes(intersect.object));
             //const hasPerso = persoAssets.includes(intersects[0]);
 
-            console.log("Intersection : ");
-            console.dir(intersects);
-            console.dir(hasPerso);
+            //console.log("Intersection : ");
+            //console.dir(intersects);
+            //console.dir(hasPerso);
             
             if (hasPerso) {
                 helloAnimation();
