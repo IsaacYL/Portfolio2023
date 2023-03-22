@@ -75,7 +75,7 @@ export default function loaderPerso() {
             raycaster.setFromCamera(mouse, camera);
 
             var persoAssets = [];
-            for(let i = 0; i < scene.children[5].children[0].children.length; i++){
+            for(var i = 0; i < scene.children[5].children[0].children.length; i++){
                 persoAssets.push(scene.children[5].children[0].children[i]);
             }
             
