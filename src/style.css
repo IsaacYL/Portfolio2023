@@ -379,7 +379,7 @@ canvas {
 }
 
 .footer-index {
-    position: absolute;
+    position: fixed;
     bottom: 0;
 }
 
@@ -487,6 +487,10 @@ canvas {
 
 .width-half-photo-me {
     width: 100%;
+}
+
+.visibility-only-desktop-tablet{
+    display: none;
 }
 
 /* ------------------- TABLET - DESKTOP ------------------- */
@@ -599,6 +603,11 @@ canvas {
     .btn-phone {
         width: 15rem;
     }
+
+    .visibility-only-desktop-tablet{
+        display: initial;
+    }
+    
 }
 
 /* ------------------- TABLET ------------------- */
