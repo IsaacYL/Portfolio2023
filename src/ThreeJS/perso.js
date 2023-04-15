@@ -15,7 +15,7 @@ export default function loaderPerso() {
     const assetLoader = new GLTFLoader();
 
     /*-----------------------------------------------Importer un element 3D---------------------------------------------*/
-    const THREEURL = new URL('../Assets/3D/Isaac.glb',
+    const THREEURL = new URL('../Assets/3D/Isaac_test.glb',
         import.meta.url); //Import le fichier 3D
 
     //*-----------------------------------------------Importation du model-----------------------------------------*/
